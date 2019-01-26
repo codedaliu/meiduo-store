@@ -9,6 +9,8 @@ from rest_framework.views import APIView
 from goods.models import SKU
 from orders.serializers import OrderSKUSerialzier, OrderPlaceSerializer, OrderSerializer
 
+from apps.orders.serializers import UserOrdersSerializer
+
 """
 订单列表展示
 
@@ -96,9 +98,26 @@ class PlaceOrderAPIView(APIView):
 POST    /orders/
 
 """
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
+
+
 class OrderAPIView(CreateAPIView):
 
     permission_classes = [IsAuthenticated]
 
     serializer_class = OrderSerializer
+
+
+class SKUOrderView(ListAPIView):
+
+    # pagination_class = LargeResultsSetPagination
+    # pagination_class = StandardResultsSetPagination
+
+    permission_classes = [IsAuthenticated]
+
+    serializer_class = UserOrdersSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        orders = user.orderinfo_set.all()
+        return orders

@@ -5,6 +5,6 @@ urlpatterns = [
     #/orders/places/
     url(r'^places/$',views.PlaceOrderAPIView.as_view(),name='placeorder'),
     url(r'^$',views.OrderAPIView.as_view(),name='order'),
-
+    url(r'^list/$', views.SKUOrderView.as_view()),
 
 ]
