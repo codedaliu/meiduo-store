@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42532910-5deb-49ed-8f9e-d0e5d03452b2" name="Default" comment="" />
+    <list default="true" id="166a66fb-9669-4e99-a2c5-39c468fd8ea7" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/meiduo_34$manage.coverage" NAME="manage Coverage Results" MODIFIED="1548488869616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mall" />
+    <SUITE FILE_PATH="coverage/meiduo_34$manage.coverage" NAME="manage Coverage Results" MODIFIED="1548495925699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mall" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -18,8 +18,105 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mall/manage.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mall/apps/oauth/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="233" column="123" lean-forward="false" selection-start-line="233" selection-start-column="123" selection-end-line="233" selection-end-column="123" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mall/apps/oauth/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2108">
+              <caret line="175" column="26" lean-forward="false" selection-start-line="175" selection-start-column="26" selection-end-line="175" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mall/apps/oauth/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mall/apps/oauth/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mall/apps/oauth/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="660" column="0" lean-forward="false" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QQ-weibo.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/images/QQ-weibo.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QQtool.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/django_myself/lib/python3.5/site-packages/QQLoginTool/QQtool.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -28,77 +125,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mall/mall/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8136">
-              <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mall/apps/orders/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_center_order.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front/js/user_center_order.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mall/apps/orders/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mall/apps/orders/serializers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5592">
-              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>weix</find>
+      <find>weixin</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mall/mall/settings.py" />
-        <option value="$PROJECT_DIR$/mall/apps/orders/urls.py" />
-        <option value="$PROJECT_DIR$/mall/apps/orders/serializers.py" />
-        <option value="$PROJECT_DIR$/mall/apps/orders/views.py" />
-        <option value="$PROJECT_DIR$/front/js/user_center_order.js" />
+        <option value="$PROJECT_DIR$/front/js/login.js" />
+        <option value="$PROJECT_DIR$/front/css/main.css" />
+        <option value="$PROJECT_DIR$/front/login.html" />
+        <option value="$PROJECT_DIR$/mall/apps/oauth/models.py" />
+        <option value="$PROJECT_DIR$/mall/apps/oauth/urls.py" />
+        <option value="$PROJECT_DIR$/mall/apps/oauth/serializers.py" />
+        <option value="$PROJECT_DIR$/mall/apps/oauth/utils.py" />
+        <option value="$PROJECT_DIR$/mall/apps/oauth/views.py" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -106,8 +162,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1851" />
-    <option name="height" value="865" />
+    <option name="width" value="1297" />
+    <option name="height" value="592" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -124,6 +180,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -161,7 +218,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="mall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -175,17 +236,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
+              <option name="myItemId" value="mall" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oauth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,12 +257,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/front/js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/front/js" />
       <recent name="$PROJECT_DIR$/front" />
     </key>
   </component>
@@ -449,29 +513,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42532910-5deb-49ed-8f9e-d0e5d03452b2" name="Default" comment="" />
-      <created>1548488279764</created>
+      <changelist id="166a66fb-9669-4e99-a2c5-39c468fd8ea7" name="Default" comment="" />
+      <created>1548488158760</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1548488279764</updated>
+      <updated>1548488158760</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1851" height="865" extended-state="6" />
+    <frame x="65" y="24" width="1297" height="592" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18352681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22231075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32258064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37148595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -489,18 +553,51 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mall/mall/settings.py</url>
-          <line>124</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mall/manage.py">
+    <entry file="file://$PROJECT_DIR$/mall/apps/oauth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5808">
+          <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="43" column="48" lean-forward="false" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15840">
+          <caret line="660" column="0" lean-forward="true" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2544">
+          <caret line="106" column="29" lean-forward="true" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/images/QQ-weibo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/django_myself/lib/python3.5/site-packages/QQLoginTool/QQtool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -508,95 +605,274 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mall/mall/settings.py">
+    <entry file="file:///usr/lib/python3.5/urllib/parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8136">
-          <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
+        <state relative-caret-position="18000">
+          <caret line="752" column="13" lean-forward="false" selection-start-line="752" selection-start-column="4" selection-end-line="752" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mall/apps/orders/urls.py">
+    <entry file="file://$PROJECT_DIR$/front/js/oauth_callback.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        <state relative-caret-position="1104">
+          <caret line="46" column="60" lean-forward="false" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="60" />
+          <folding>
+            <marker date="1548030691442" expanded="true" signature="0:40" ph="/** Created by python on 18-8-23. ...*/" />
+            <marker date="1548030691442" expanded="true" signature="58:7599" ph="{&quot;el&quot;: '##app'...}" />
+            <marker date="1548030691442" expanded="true" signature="86:631" ph="{&quot;host&quot;: host...}" />
+            <marker date="1548030691442" expanded="true" signature="656:1827" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="802:893" ph="{&quot;responseType&quot;: 'json'...}" />
+            <marker date="1548030691442" expanded="true" signature="925:956" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="970:1459" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1465:1679" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1723:1748" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1842:7597" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1905:2162" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2072:2127" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2215:2738" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2341:2436" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2528:2701" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2826:3108" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2840:2902" ph="//..." />
+            <marker date="1548030691442" expanded="true" signature="3140:3350" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3215:3274" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3280:3340" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3384:3652" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3464:3521" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3527:3642" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3691:3925" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3726:3847" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3853:3915" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3961:4186" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3993:4110" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4116:4176" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4242:6103" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4287:4326" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4542:4624" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4806:4866" ph="{&quot;responseType&quot;: 'json'...}" />
+            <marker date="1548030691442" expanded="true" signature="4902:5023" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4924:4990" ph="//..." />
+            <marker date="1548030691442" expanded="true" signature="5102:5135" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5142:5486" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5492:5655" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5740:5771" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5796:5940" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5946:6027" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6148:7591" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6354:7581" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6415:6637" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6639:6708" ph="{&quot;responseType&quot;: 'json'...}" />
+            <marker date="1548030691442" expanded="true" signature="6748:6825" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="7219:7254" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="7279:7449" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="7455:7544" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/oauth_callback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/oauth_callback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/sina_callback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-792">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/urllib/parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18000">
+          <caret line="752" column="13" lean-forward="false" selection-start-line="752" selection-start-column="4" selection-end-line="752" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/oauth_callback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="46" column="60" lean-forward="false" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="60" />
+          <folding>
+            <marker date="1548030691442" expanded="true" signature="0:40" ph="/** Created by python on 18-8-23. ...*/" />
+            <marker date="1548030691442" expanded="true" signature="58:7599" ph="{&quot;el&quot;: '##app'...}" />
+            <marker date="1548030691442" expanded="true" signature="86:631" ph="{&quot;host&quot;: host...}" />
+            <marker date="1548030691442" expanded="true" signature="656:1827" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="802:893" ph="{&quot;responseType&quot;: 'json'...}" />
+            <marker date="1548030691442" expanded="true" signature="925:956" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="970:1459" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1465:1679" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1723:1748" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1842:7597" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="1905:2162" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2072:2127" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2215:2738" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2341:2436" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2528:2701" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2826:3108" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="2840:2902" ph="//..." />
+            <marker date="1548030691442" expanded="true" signature="3140:3350" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3215:3274" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3280:3340" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3384:3652" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3464:3521" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3527:3642" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3691:3925" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3726:3847" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3853:3915" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3961:4186" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="3993:4110" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4116:4176" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4242:6103" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4287:4326" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4542:4624" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4806:4866" ph="{&quot;responseType&quot;: 'json'...}" />
+            <marker date="1548030691442" expanded="true" signature="4902:5023" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="4924:4990" ph="//..." />
+            <marker date="1548030691442" expanded="true" signature="5102:5135" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5142:5486" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5492:5655" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5740:5771" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5796:5940" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="5946:6027" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6148:7591" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6354:7581" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6415:6637" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="6639:6708" ph="{&quot;responseType&quot;: 'json'...}" />
+            <marker date="1548030691442" expanded="true" signature="6748:6825" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="7219:7254" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="7279:7449" ph="{...}" />
+            <marker date="1548030691442" expanded="true" signature="7455:7544" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/images/QQ-weixin.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/apps/pay/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/django_myself/lib/python3.5/site-packages/QQLoginTool/QQtool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/images/QQ-weixin.jpg" />
+    <entry file="file://$PROJECT_DIR$/front/images/QQ-weibo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="660" column="0" lean-forward="false" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/mall/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/apps/oauth/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mall/apps/orders/views.py">
+    <entry file="file://$PROJECT_DIR$/mall/apps/oauth/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="164">
+          <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mall/apps/orders/serializers.py">
+    <entry file="file://$PROJECT_DIR$/mall/apps/oauth/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5592">
-          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+        <state relative-caret-position="308">
+          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="99" column="21" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mall/apps/oauth/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="175" column="26" lean-forward="false" selection-start-line="175" selection-start-column="26" selection-end-line="175" selection-end-column="26" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mall/manage.py">
+    <entry file="file://$PROJECT_DIR$/mall/apps/oauth/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mall/mall/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8136">
-          <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mall/apps/orders/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5592">
-          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="233" column="123" lean-forward="false" selection-start-line="233" selection-start-column="123" selection-end-line="233" selection-end-column="123" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mall/apps/orders/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mall/apps/orders/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/user_center_order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
