@@ -94,7 +94,21 @@ var vm = new Vue({
                 .catch(error => {
                     console.log(error.response.data);
                 })
+        },
+        // weibo登录
+        weibi_login:function () {
+            var state = this.get_query_string('next') || '/';
+            axios.get(this.host + '/oauth/weibo/statues/?state=' + state, {
+            responseType:'json'
+            })
+            .then(response => {
+                location.href = response.data.auth_url;
+                })
+            .catch(error => {
+                    console.log(error.response.data);
+                })
         }
+
 
     }
 });
