@@ -96,7 +96,9 @@ var vm = new Vue({
                 })
         },
         // weibo登录
-        weibo_login:function () {
+
+        weibi_login:function () {
+
             var state = this.get_query_string('next') || '/';
             axios.get(this.host + '/oauth/weibo/statues/?state=' + state, {
             responseType:'json'
@@ -108,6 +110,7 @@ var vm = new Vue({
                     console.log(error.response.data);
                 })
         }
+
 
     }
 });
