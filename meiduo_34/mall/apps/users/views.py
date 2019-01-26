@@ -470,3 +470,21 @@ class MergeLoginAPIView(ObtainJSONWebToken):
             response = merge_cookie_to_redis(request, user, response)
 
         return response
+
+
+# 修改密码
+class UserPassWordView(APIView):
+        def put(self,request, user_pwd):
+
+            data = request.data
+            user = User.objects.get(id=user_pwd)
+            # 查看就密码正确性
+            if not user.check_password(data['old_password']):
+                raise Exception('原密码错误')
+            # 判断新密码是否一致
+            if data['password'] != data['password2']:
+                raise Response('{"status":"fail", "msg":"密码不一致"}', content_type="application/json")
+                # 密码加密保存
+            user.set_password(data['password'])
+            user.save()
+            return Response({'message':'保存成功'})

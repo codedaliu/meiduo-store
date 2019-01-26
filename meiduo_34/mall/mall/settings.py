@@ -121,9 +121,9 @@ WSGI_APPLICATION = 'mall.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '127.0.0.1',  # 数据库主机
+        'HOST': '106.13.35.62',  # 数据库主机
         'PORT': 3306,  # 数据库端口
-        'USER': 'root',  # 数据库用户名
+        'USER': 'meiduo',  # 数据库用户名
         'PASSWORD': 'mysql',  # 数据库用户密码
         'NAME': 'meiduo_mall_34'  # 数据库名字
     }
@@ -339,7 +339,7 @@ DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.MyStorage'
 
 
 # FastDFS
-FDFS_URL = 'http://192.168.189.157:8888/'  # 访问图片的路径域名 ip地址修改为自己机器的ip地址
+FDFS_URL = 'http://106.13.35.62:8888/'  # 访问图片的路径域名 ip地址修改为自己机器的ip地址
 FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
 
 
@@ -351,7 +351,7 @@ GENERATED_STATIC_HTML_FILES_DIR = os.path.join(os.path.dirname(BASE_DIR), 'front
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
-        'URL': 'http://192.168.189.157:9200/',  # 此处为elasticsearch运行的服务器ip地址，端口号固定为9200
+        'URL': 'http://106.13.35.62:9200/',  # 此处为elasticsearch运行的服务器ip地址，端口号固定为9200
         'INDEX_NAME': 'meiduo',  # 指定elasticsearch建立的索引库的名称
     },
 }

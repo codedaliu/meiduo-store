@@ -26,6 +26,7 @@ urlpatterns = [
 
     #/users/browerhistories/
     url(r'^browerhistories/$',views.UserHistoryAPIView.as_view()),
+    url(r'(?P<user_pwd>\d+)/password/$', views.UserPassWordView.as_view()),
 ]
 
 from .views import AddressViewSet
