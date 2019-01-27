@@ -8,3 +8,4 @@ urlpatterns = [
     url(r'^list/$', views.SKUOrderView.as_view()),
 
 ]
+
