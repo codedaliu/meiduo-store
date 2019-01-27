@@ -242,7 +242,7 @@ class UserSkuOrderGoodsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SKU
-        fields = ['name','default_image_url']
+        fields = ['name','default_image_url',"id"]
 
 
 class UserOrderGoodsSerializer(serializers.ModelSerializer):
@@ -256,6 +256,8 @@ class UserOrderGoodsSerializer(serializers.ModelSerializer):
         model = OrderGoods
         fields = ['id', 'count', 'price', 'order_id', 'sku_id','sku']
 
+
+
 class UserOrdersSerializer(serializers.ModelSerializer):
 
     skus = UserOrderGoodsSerializer(many=True)
@@ -263,3 +265,15 @@ class UserOrdersSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderInfo
         fields = ['create_time','order_id', 'total_amount', 'pay_method', 'status', 'skus', 'freight']
+
+
+
+
+
+
+
+
+
+
+
+

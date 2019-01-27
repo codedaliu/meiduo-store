@@ -3,11 +3,14 @@ from django.shortcuts import render
 
 # Create your views here.
 from django_redis import get_redis_connection
+from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from goods.models import SKU
-from orders.serializers import OrderSKUSerialzier, OrderPlaceSerializer, OrderSerializer
+from orders.models import OrderGoods, OrderInfo
+from orders.serializers import OrderSKUSerialzier, OrderPlaceSerializer, OrderSerializer, CommentOrdersDeSerializer, \
+    CommentOrderSerializer, UserSkuOrderGoodsSerializer
 
 from apps.orders.serializers import UserOrdersSerializer
 
@@ -102,6 +105,7 @@ from rest_framework.generics import CreateAPIView, ListAPIView
 
 
 class OrderAPIView(CreateAPIView):
+    pagination_class = None
 
     permission_classes = [IsAuthenticated]
 
@@ -109,6 +113,7 @@ class OrderAPIView(CreateAPIView):
 
 
 class SKUOrderView(ListAPIView):
+    pagination_class = None
 
     # pagination_class = LargeResultsSetPagination
     # pagination_class = StandardResultsSetPagination
@@ -121,3 +126,13 @@ class SKUOrderView(ListAPIView):
         user = self.request.user
         orders = user.orderinfo_set.all()
         return orders
+
+
+
+
+
+
+
+
+
+
