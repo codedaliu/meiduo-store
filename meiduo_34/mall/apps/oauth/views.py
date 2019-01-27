@@ -7,9 +7,13 @@ from QQLoginTool.QQtool import OAuthQQ
 from mall import settings
 from rest_framework import status
 
-from oauth.models import OAuthQQUser
+from oauth.models import OAuthQQUser, OAuthSinaUser
+
 from oauth.serializers import OAuthQQUserSerializer
-from oauth.utils import generic_open_id
+
+from oauth.serializers import OAuthQQUserSerializer, OAuthSinaUserSerializer
+
+from oauth.utils import generic_open_id, generic_access_token
 
 """
 当用户点击qq按钮的时候,会发送一个请求,
@@ -220,3 +224,105 @@ data = {
 
 #3. 让序列化器对数据进行处理
 token = s.dumps(data)
+
+class OauthSinaURLAPIView(APIView):
+
+    #获取微博登录页面url
+
+    def get(self,request):
+        weibo_auth_url = "https://api.weibo.com/oauth2/authorize"
+        redirect_url = "http://www.meiduo.site:8080/sina_callback.html"
+        client_id = "3305669385"
+        state = '/'
+        auth_url = weibo_auth_url + "?client_id={client_id}&redirect_uri={re_url}&state={state}".format(client_id=client_id,
+                                                                                          re_url = redirect_url,state=state)
+        print(auth_url)
+        return Response({'auth_url':auth_url})
+
+
+class OAuthSinaUserAPIView(APIView):
+    # 获取登录的token，这里是拿到登录的code
+    # code会拼接在回调地址后面返回http://127.0.0.1:8001/complete/weibo/?code=c53bd7b5af51ec985952a3c03de3b
+    def get(self,request):
+        params = request.query_params
+        code = params['code']
+        print(code)
+        print(type(code))
+        #判断ｃｏｄｅ是否存在
+        if code is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        #通过ｃｏｄｅ获取access_token
+
+        access_token_url = "https://api.weibo.com/oauth2/access_token"
+        # 组织数据
+        import requests
+        re_dict = requests.post(access_token_url, data={
+            "client_id": 3305669385,
+            "client_secret": "74c7bea69d5fc64f5c3b80c802325276",
+            "grant_type": "authorization_code",
+            "code": code,
+            "redirect_uri": "http://www.meiduo.site:8080/sina_callback.html",
+        })
+        try:
+            # 提取数据
+            data = re_dict.text
+
+            # data获取到的信息未一个字典'{"access_token":"2.00oneFMeMfeS0889036fBNW_B",
+            # "remind_in":"15799","expires_in":15799,"uid":"5675652",
+            # "isRealName":"true"}'
+
+            # 转化为字典
+            data = eval(data)
+        except:
+            raise Exception('微博登录错误')
+        # 提取access_token
+        access_token = data.get('access_token', None)
+        print(data)
+        if not access_token:
+            raise Exception('获取失败')
+        print(re_dict)
+        # access_token = access_token[0]
+        try:
+            weibouser = OAuthSinaUser.objects.get(access_token=access_token)
+        except OAuthSinaUser.DoesNotExist:
+
+            token = generic_access_token(access_token)
+
+            return Response({'access_token':token})
+        else:
+            from rest_framework_jwt.settings import api_settings
+
+            jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
+            jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+
+            payload = jwt_payload_handler(weibouser.user)
+            token = jwt_encode_handler(payload)
+
+            return Response({
+                'token': token,
+                'username': weibouser.user.username,
+                'user_id': weibouser.user.id
+            })
+    def post(self,request):
+        #获取数据
+        data = request.data
+        #创建序列化器
+        serializer = OAuthSinaUserSerializer(data = data)
+        serializer.is_valid(raise_exception=True)
+        #保存序列化器
+        sinauser = serializer.save()
+
+        from rest_framework_jwt.settings import api_settings
+
+        jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
+        jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+
+        payload = jwt_payload_handler(sinauser.user)
+        token = jwt_encode_handler(payload)
+
+        data = {
+            'token':token,
+            'username':sinauser.user.username,
+            'user_id':sinauser.user.id
+        }
+        return Response(data)

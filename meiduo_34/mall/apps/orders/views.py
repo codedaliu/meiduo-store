@@ -9,8 +9,13 @@ from rest_framework.views import APIView
 
 from goods.models import SKU
 from orders.models import OrderGoods, OrderInfo
+
 from orders.serializers import OrderSKUSerialzier, OrderPlaceSerializer, OrderSerializer, CommentOrdersDeSerializer, \
     CommentOrderSerializer, UserSkuOrderGoodsSerializer
+
+from orders.serializers import OrderSKUSerialzier, OrderPlaceSerializer, OrderSerializer, CommentOrderSerializer, \
+    UserSkuOrderGoodsSerializer, CommentOrdersDeSerializer,  UserOrderGoodsSerializer
+
 
 from apps.orders.serializers import UserOrdersSerializer
 
@@ -135,4 +140,107 @@ class SKUOrderView(ListAPIView):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class UNcommentGoodsOrderAPIView(ListAPIView):
+
+    # permission_classes = [IsAuthenticated]
+
+    pagination_class = None
+
+
+    serializer_class = UserOrderGoodsSerializer
+
+
+
+    def get_queryset(self):
+        order_id = self.kwargs.get("order_id")
+
+        return OrderGoods.objects.filter(order_id=order_id,is_commented= False,)
+
+
+
+
+class CommentOrderAPIView(APIView):
+
+    # permission_classes = [IsAuthenticated]
+    pagination_class = None
+
+    def post(self,request,order_id):
+
+        # 1.接受数据
+        data = request.data
+        # 2.校验数据
+        serializer = CommentOrderSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+
+        order = serializer.validated_data.get('order')
+        sku = serializer.validated_data.get('sku')
+        comment = serializer.validated_data.get('comment')
+        score = serializer.validated_data.get('score')
+        is_anonymous = serializer.validated_data.get('is_anonymous')
+
+        # 3. 数据入库
+        try:
+            comment_goods = OrderGoods.objects.get(order = order, sku = sku)
+        except OrderGoods.DoesNotExist:
+            return Response({'message': '产品信息有误'}, status=status.HTTP_400_BAD_REQUEST)
+
+        comment_goods.comment = comment
+        comment_goods.score = score
+        comment_goods.is_anonymous = is_anonymous
+        comment_goods.is_commented = True
+        comment_goods.save()
+
+        # 判断订单状态
+        try:
+            flag = 0
+            comments_goods = OrderGoods.objects.filter(order_id=order_id)
+            for comment_good in comments_goods:
+                if comment_good.is_commented == False:
+                    flag = 1
+            if flag == 0:
+                try:
+                    comment_infos =  OrderInfo.objects.get(order_id=order_id)
+                except OrderInfo.DoesNotExist:
+                    return Response({'message': '产品信息错误'}, status=status.HTTP_400_BAD_REQUEST)
+                comment_infos.status = 5
+                comment_infos.save()
+        except OrderGoods.DoesNotExist:
+            return Response({'message': '产品信息错误'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # 4. 返回相应
+        return Response({
+            'comment': comment,
+            'score': score,
+            'is_anonymous': is_anonymous,
+
+        })
+
+        # 详情展示
+
+class CommentOrdersDeAPIView(ListAPIView):
+
+        # 评论详情数据
+        # GET /orders/(?P<sku_id>\d+)/comments/
+
+        pagination_class = None
+
+        def get_queryset(self):
+            sku_id = self.kwargs.get('sku_id')
+            return OrderGoods.objects.filter(sku_id=sku_id, is_commented=True)
+
+        serializer_class = CommentOrdersDeSerializer
 

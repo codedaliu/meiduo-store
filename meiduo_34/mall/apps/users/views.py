@@ -482,6 +482,7 @@ class MergeLoginAPIView(ObtainJSONWebToken):
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -603,6 +604,31 @@ class MergeLoginAPIView(ObtainJSONWebToken):
 #         user.set_password(password)
 #         user.save()
 #         return Response(status=status.HTTP_201_CREATED)
+=======
+# 修改密码
+class UserPassWordView(APIView):
+        def put(self,request, user_pwd):
+
+            data = request.data
+            user = User.objects.get(id=user_pwd)
+            # 查看就密码正确性
+            if not user.check_password(data['old_password']):
+                raise Exception('原密码错误')
+            # 判断新密码是否一致
+            if data['password'] != data['password2']:
+                raise Response('{"status":"fail", "msg":"密码不一致"}', content_type="application/json")
+                # 密码加密保存
+            user.set_password(data['password'])
+            user.save()
+            return Response({'message':'保存成功'})
+
+
+
+
+
+
+
+>>>>>>> 7aa914069854136f484ee2b9fddc32ceee4ab62f
 
 
 
@@ -632,7 +658,11 @@ def inspect_access_token(token):
     return data
 
 
+<<<<<<< HEAD
 #
+=======
+
+>>>>>>> 7aa914069854136f484ee2b9fddc32ceee4ab62f
 # # 忘记密码的第一步图片验证码验证
 class FindPassWordAPIView(APIView):
     # GET /users/17611666527/sms/token/?text=pokm&image_code_id=bec7e636-a811-4b48-9749-a7a54c7eda6d
