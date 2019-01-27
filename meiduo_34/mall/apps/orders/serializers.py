@@ -239,14 +239,14 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
 class UserSkuOrderGoodsSerializer(serializers.ModelSerializer):
-
+#查询商品名称和商品图片表
     class Meta:
         model = SKU
         fields = ['name','default_image_url']
 
 
 class UserOrderGoodsSerializer(serializers.ModelSerializer):
-
+#调用产品信息序列化器　查询订单商品信息
     sku = UserSkuOrderGoodsSerializer()
     # orders = UserOrdersSerializer(many=True)
     # price = serializers.DecimalField(max_digits=10, decimal_places=2, verbose_name="单价")
@@ -257,7 +257,7 @@ class UserOrderGoodsSerializer(serializers.ModelSerializer):
         fields = ['id', 'count', 'price', 'order_id', 'sku_id','sku']
 
 class UserOrdersSerializer(serializers.ModelSerializer):
-
+#调用订单商品信息　查询订单信息
     skus = UserOrderGoodsSerializer(many=True)
 
     class Meta:
