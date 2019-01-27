@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,6 +14,7 @@ from users.models import User
 from users.serialziers import RegiserUserSerializer, UserCenterInfoSerializer, UserEmailInfoSerializer, \
     AddressSerializer, AddUserBrowsingHistorySerializer, SKUSerializer
 from users.utils import check_token
+from utils.users import get_user_by_account
 
 """
 1.分析需求 (到底要干什么)
@@ -488,3 +491,12 @@ class UserPassWordView(APIView):
             user.set_password(data['password'])
             user.save()
             return Response({'message':'保存成功'})
+
+
+
+
+
+
+
+
+

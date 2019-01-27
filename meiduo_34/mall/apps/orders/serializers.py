@@ -263,3 +263,52 @@ class UserOrdersSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderInfo
         fields = ['create_time','order_id', 'total_amount', 'pay_method', 'status', 'skus', 'freight']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class CommentOrderSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = OrderGoods
+        fields = ('sku', 'comment', 'score',"is_anonymous","order")
+        extra_kwargs = {
+            "comment": {
+                'required': True,
+            }
+        }
+
+
+
+# 详情展示
+class CommentOrdersDeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = OrderGoods
+        fields = ("sku","comment","score")
+        extra_kwargs = {
+            "comment":{
+                "required":True,
+            }
+        }
+
+
+
+
+
