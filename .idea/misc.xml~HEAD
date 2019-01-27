@@ -3,9 +3,5 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.2 virtualenv at ~/.virtualenvs/django_py3_1.11" project-jdk-type="Python SDK" />
-=======
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.2 virtualenv at ~/.virtualenvs/django_myself" project-jdk-type="Python SDK" />
->>>>>>> 7aa914069854136f484ee2b9fddc32ceee4ab62f
 </project>

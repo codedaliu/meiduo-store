@@ -242,7 +242,7 @@ class UserSkuOrderGoodsSerializer(serializers.ModelSerializer):
 #查询商品名称和商品图片表
     class Meta:
         model = SKU
-        fields = ['name','default_image_url']
+        fields = ['name','default_image_url',"id"]
 
 
 class UserOrderGoodsSerializer(serializers.ModelSerializer):
@@ -256,6 +256,8 @@ class UserOrderGoodsSerializer(serializers.ModelSerializer):
         model = OrderGoods
         fields = ['id', 'count', 'price', 'order_id', 'sku_id','sku']
 
+
+
 class UserOrdersSerializer(serializers.ModelSerializer):
 #调用订单商品信息　查询订单信息
     skus = UserOrderGoodsSerializer(many=True)
@@ -263,3 +265,51 @@ class UserOrdersSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderInfo
         fields = ['create_time','order_id', 'total_amount', 'pay_method', 'status', 'skus', 'freight']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class CommentOrderSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = OrderGoods
+        fields = ('sku', 'comment', 'score',"is_anonymous","order")
+        extra_kwargs = {
+            "comment": {
+                'required': True,
+            }
+        }
+
+
+
+# 详情展示
+class CommentOrdersDeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = OrderGoods
+        fields = ("sku","comment","score")
+        extra_kwargs = {
+            "comment":{
+                "required":True,
+            }
+        }
+
+
+
+
+
+

@@ -1,17 +1,26 @@
+import random
+
 from django.shortcuts import render
 
 # Create your views here.
+from itsdangerous import BadData
 from rest_framework.response import Response
 
 # from mall.apps.users.models import User
 # from apps.users.models import User
 # from users.models import User
 # 正确
+from rest_framework.serializers import Serializer
+
 from goods.models import SKU
+from libs.yuntongxun.sms import CCP
+from mall import settings
+
 from users.models import User
 from users.serialziers import RegiserUserSerializer, UserCenterInfoSerializer, UserEmailInfoSerializer, \
     AddressSerializer, AddUserBrowsingHistorySerializer, SKUSerializer
 from users.utils import check_token
+from utils.users import get_user_by_account
 
 """
 1.分析需求 (到底要干什么)
@@ -471,4 +480,282 @@ class MergeLoginAPIView(ObtainJSONWebToken):
 
         return response
 
+
+
+
+# 忘记密码
+
+
+# # 生成token
+# def check_access_token(mobile):
+#     # serializer = Serializer(秘钥, 有效期秒)
+#     serializer = Serializer(settings.SECRET_KEY, 3600)
+#     # serializer.dumps(数据), 返回bytes类型
+#     token = serializer.dumps({'mobile': mobile})
+#     token = token.decode()
+#     return token
+#
+#
+# # 校验token
+# def inspect_access_token(token):
+#     # 检验token
+#     # 验证失败，会抛出itsdangerous.BadData异常
+#     serializer = Serializer(settings.SECRET_KEY, 3600)
+#     try:
+#         data = serializer.loads(token)
+#     except BadData:
+#         return None
+#     return data
+#
+#
+#
+# class FindUserPassword(APIView):
+#     def get(self, reqeust, username):
+#         try:
+#             user = get_user_by_account(username)
+#         except:
+#             return Response('用户不存在')
+#         user_mobile = user.mobile
+#         text = reqeust.query_params.get('text')
+#         image_id = reqeust.query_params.get('image_code_id')
+#
+#         redis_conn = get_redis_connection('code')
+#         redis_text = redis_conn.get('img_' + str(image_id))
+#
+#         if redis_text.decode().lower() != text.lower():
+#             raise Exception('输入错误')
+#
+#         token = check_access_token(mobile=user_mobile)
+#
+#         data = {
+#             'mobile': user_mobile,  # 加密
+#             'access_token': token,
+#         }
+#         return Response(data)
+#
+#
+# class RegisterSMSCodeView(APIView):
+#     def get(self, request):
+#         access_token = request.query_params.get('access_token')
+#
+#         token = inspect_access_token(access_token)
+#
+#         mobile = token['mobile']
+#
+#         redis_conn = get_redis_connection('code')
+#         sms_code = '%06d' % random.randint(0, 999999)
+#         # redis增加记录
+#         redis_conn.setex('sms_%s' % mobile, 5 * 60, sms_code)
+#         redis_conn.setex('sms_flag_%s' % mobile, 60, 1)
+#         # 发送短信
+#         ccp = CCP()
+#         ccp.send_template_sms(mobile, [sms_code, 5], 1)
+#
+#         return Response({'message': 'ok'})
+#
+#
+# class SendPassword(APIView):
+#     def get(self, request, username):
+#
+#         try:
+#             user = get_user_by_account(username)
+#         except:
+#             return Response('用户不存在')
+#
+#         user_id = user.id
+#
+#         user_mobile = user.mobile
+#
+#         sms_code = request.query_params.get('sms_code')
+#
+#         redis_conn = get_redis_connection('code')
+#
+#         redis_code = redis_conn.get('sms_' + str(user_mobile)).decode()
+#
+#         if sms_code != redis_code:
+#             raise Exception('验证码输入错误')
+#
+#         access_token = check_access_token(mobile=user_mobile)
+#
+#         data = {
+#             'user_id': user_id,
+#             'access_token': access_token
+#         }
+#
+#         return Response(data)
+#
+#
+# class CheakPassword(APIView):
+#     def post(self, request, user_id):
+#
+#         password = request.data.get('password')
+#         password2 = request.data.get('password2')
+#         access_token = request.data.get('access_token')
+#
+#         if not access_token:
+#             return Response('请求超时')
+#         if password != password2:
+#             return Response('前后密码不一致')
+#
+#         user = User.objects.get(id=user_id)
+#         user.set_password(password)
+#         user.save()
+#         return Response(status=status.HTTP_201_CREATED)
+
+# 修改密码
+class UserPassWordView(APIView):
+        def put(self,request, user_pwd):
+
+            data = request.data
+            user = User.objects.get(id=user_pwd)
+            # 查看就密码正确性
+            if not user.check_password(data['old_password']):
+                raise Exception('原密码错误')
+            # 判断新密码是否一致
+            if data['password'] != data['password2']:
+                raise Response('{"status":"fail", "msg":"密码不一致"}', content_type="application/json")
+                # 密码加密保存
+            user.set_password(data['password'])
+            user.save()
+            return Response({'message':'保存成功'})
+
+
+
+
+
+
+
+
+
+
+
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from django.conf import settings
+
+
+# 生成token
+def check_access_token(mobile):
+    # serializer = Serializer(秘钥, 有效期秒)
+    serializer = Serializer(settings.SECRET_KEY, 3600)
+    # serializer.dumps(数据), 返回bytes类型
+    token = serializer.dumps({'mobile': mobile})
+    token = token.decode()
+    return token
+
+
+# 校验token
+def inspect_access_token(token):
+    # 检验token
+    # 验证失败，会抛出itsdangerous.BadData异常
+    serializer = Serializer(settings.SECRET_KEY, 3600)
+    try:
+        data = serializer.loads(token)
+    except BadData:
+        return None
+    return data
+
+
+
+# # 忘记密码的第一步图片验证码验证
+class FindPassWordAPIView(APIView):
+    # GET /users/17611666527/sms/token/?text=pokm&image_code_id=bec7e636-a811-4b48-9749-a7a54c7eda6d
+
+    def get(self, request, username):
+        try:
+            user = get_user_by_account(username)
+        except User.DoesNotExits:
+            return Response({'message': '用户不存在'})
+        text = request.query_params.get('text')
+        image_id = request.query_params.get('image_code_id')
+        # 连接redis对数据进行校验
+        redis_conn = get_redis_connection('code')
+        redis_text = redis_conn.get('img_' + str(image_id))
+        if redis_text is None:
+            return Response({'message': '图片验证码过期'})
+        if redis_text.decode().lower() != text.lower():
+            return Response({'message': '图片验证码错误'})
+        access_token = check_access_token(mobile=username)
+        mobile = user.mobile
+        list = mobile[3:7]
+        user_mobile = mobile.replace(list, '童童我儿')
+        data = {
+            'mobile': user_mobile,
+            'access_token': access_token
+        }
+        return Response(data)
+
+
+class GetTokenAPIView(APIView):
+    '''发送短信，校验token'''
+
+    def get(self, request):
+        token = request.query_params.get('access_token')
+        access_token = inspect_access_token(token)
+        mobile = access_token['mobile']
+        sms_code = '%06d' % random.randint(0, 999999)
+
+        redis_conn = get_redis_connection('code')
+        redis_conn.setex('sms_' + mobile, 5 * 60, sms_code)
+
+        from clery_tasks.sms.tasks import send_sms_code
+        send_sms_code.delay(mobile, sms_code)
+
+        return Response({'message':'ok'})
+
+class SendSmsAPIView(APIView):
+    '''校验输入的短信验证码'''
+
+    def get(self, request, username):
+
+        '''
+        校验手机号
+        校验短信验证码
+        校验access_token
+        1, 获取前端传递过来的电话并进行验证
+        2， 获取前端传递过来的短信验证码并链接redis进行校验
+        3， 获取前端传递过来的access_token 进行校验
+        4, 返回响应， user_id, access_token
+        '''
+        # 3， 获取前端传递过来的access_token 进行校验
+
+            # 1, 获取前端传递过来的电话并进行验证
+        try:
+            user = get_user_by_account(username)
+        except Exception as e:
+            return Response('用户不存在')
+        mobile = user.mobile
+        # 2， 获取前端传递过来的短信验证码并链接redis进行校验
+        sms_code = request.query_params.get('sms_code')
+        redis_conn = get_redis_connection('code')
+        smscode = redis_conn.get('sms_%s' % mobile).decode()
+        if sms_code != smscode:
+            return Response({'message': '短信验证码输入错误'})
+        new_token = check_access_token(mobile=mobile)
+        # 4, 返回响应， user_id, access_token
+        data = {
+            'user_id': user.id,
+            'access_token': new_token
+        }
+        return Response(data)
+
+
+class SetPassWordAPIView(APIView):
+    def post(self, request, user_id):
+
+        token = request.data.get('access_token')
+        if inspect_access_token(token):
+            return Response('token验证错误')
+            # 获取user_id判断用户是否存在
+        try:
+            user = User.objects.get(user_id)
+        except Exception as e:
+            return Response('用户不存在')
+        # 获取T /users/7/passwo前端传递过来的两个密码校验是否一致
+        password = request.data.get('password')
+        password2 = request.data.get('password2')
+        if password != password2:
+            return Response({'message': '两次输入的密码不一致'})
+        user.set_password(password)
+        user.save()
+        return Response(status=status.HTTP_201_CREATED)
 

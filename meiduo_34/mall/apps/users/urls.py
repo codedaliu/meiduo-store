@@ -27,6 +27,21 @@ urlpatterns = [
     #/users/browerhistories/
     url(r'^browerhistories/$',views.UserHistoryAPIView.as_view()),
 
+
+
+
+
+
+
+    url(r'(?P<user_pwd>\d+)/password/$', views.UserPassWordView.as_view()),
+    #忘记密码
+
+    url(r'^(?P<username>1[345789]\d{9})/sms/token/$', views.FindPassWordAPIView.as_view()),
+    url(r'^sms_codes/$', views.GetTokenAPIView.as_view()),
+    url(r'^(?P<username>1[345789]\d{9})/password/token/$', views.SendSmsAPIView.as_view()),
+    url(r'^(?P<user_id>\d+)/password/$', views.SetPassWordAPIView.as_view()),
+>>>>>>> d0498be2c2b6d3bc6e8b4833e1e721545c6a3c73
+
 ]
 
 from .views import AddressViewSet
