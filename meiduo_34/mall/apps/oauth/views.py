@@ -239,10 +239,7 @@ class OauthSinaURLAPIView(APIView):
         print(auth_url)
         return Response({'auth_url':auth_url})
 
-<<<<<<< HEAD
-=======
 
->>>>>>> lpf
 class OAuthSinaUserAPIView(APIView):
     # 获取登录的token，这里是拿到登录的code
     # code会拼接在回调地址后面返回http://127.0.0.1:8001/complete/weibo/?code=c53bd7b5af51ec985952a3c03de3b

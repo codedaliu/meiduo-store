@@ -179,7 +179,7 @@ var vm = new Vue({
                 axios.post(this.host + '/oauth/sina/user/', {
                     password: this.password,
                     mobile: this.mobile,
-                    sms_code: this.sms_code,
+                    sms_code: this.access_token,
                     access_token: this.access_token
                 }, {
                     responseType: 'json',
